@@ -28,14 +28,33 @@
         false => alert('Invalid email : ' + email.value)
 */
 
-function login() {
-    let myEmail = document.getElementById("emailInput");
-    let myPass = document.getElementById("passwordInput");
-    let enter = myEmail.value.toLowerCase() + myPass.value;
+document
+    .getElementById("loginButton")
+    .addEventListener("click", function (event) {
+        event.preventDefault();
 
-    if (enter == "amir@gmail.com112233") {
-        alert("welcome amir");
-    } else {
-        alert("Invalid Email or Password");
-    }
-}
+        let myEmail = document.getElementById("emailInput");
+        let myPass = document.getElementById("passwordInput");
+
+        if (
+            myEmail.value.toLowerCase() == "amir@gmail.com" &&
+            myPass.value == "112233"
+        ) {
+            alert("welcome amir");
+        } else {
+            alert("Invalid Email or Password");
+        }
+
+        return false;
+    });
+
+document.getElementById("button1").addEventListener("click", function (event) {
+    event.preventDefault();
+    alert("alert1");
+});
+
+document.getElementById("button2").addEventListener("click", function (event) {
+    event.preventDefault();
+    alert("Alert 2");
+    return false;
+});
